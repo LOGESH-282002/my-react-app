@@ -148,7 +148,7 @@ const Chatbot = () => {
       return { role: m.role === 'user' ? 'user' : 'model', parts };
     });
     const systemInstruction = {
-      parts: [{ text: `You are a friendly and helpful chatbot named ${BOT_NAME}.` }]
+      parts: [{ text: `You are a user friendly "AI assistant"  ${BOT_NAME}.` }]
     };
     try {
       const response = await fetch(API_URL, {
@@ -165,6 +165,7 @@ const Chatbot = () => {
         .replace(/`(.*?)`/g, "<code>$1</code>").trim();
       setMessages(msgs => [...msgs, { role: 'bot', content: botReply }]);
     } catch (error) {
+      console.error("API Error:", error);
       setMessages(msgs => [...msgs, { role: 'bot', content: 'Error: Could not get response.' }]);
     } finally {
       setLoading(false);
