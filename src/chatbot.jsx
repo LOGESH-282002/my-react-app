@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./Chatbot.css";
+import "./chatbot.css";
 const BOT_NAME = "Zen";
 const BOT_GREETING = "Hi there! I'm Zen, your personal assistant. How can I help you today?";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`;
